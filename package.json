@@ -1,0 +1,19 @@
+{
+    "name": "my-awesome-package",
+    "version": "1.0.0",
+    "author": "Your Name <email@example.com> (https://example.com)",
+    "main": "Src/main.js",
+    "scripts": {
+        "start": "nodemon --inspect src/index.js",
+        "test": "echo \"Error:no test \"&& exit 1 "
+    },
+    "type": "module",
+    "dependencies": {
+        "express": "^4.21.1",
+        "express-handlebars": "^8.0.1",
+        "handlebars": "^4.7.8",
+        "knex": "^3.1.0",
+        "mysql2": "^3.11.3",
+        "nodemon": "^3.1.7"
+    }
+}
