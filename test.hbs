@@ -1,143 +1,119 @@
-<div class="haeder__top">
-    <div class="d-flex flex-row justify-content-between">
-        <div class="header__top--left">
-        </div>
-        <div class="header__top-logo">
-            <a href="/" title="Báo thanh niên" class="header__logo logo-fix">
-                <img class="logo-thuong" alt="Báo thanh niên" src="https://static.thanhnien.com.vn/thanhnien.vn/image/logo.svg" width="220px" height="63px">
-            </a>
-        </div>
-        <div class="header__top--right">
-            
-        </div>
-    </div>
-</div>
-<div class="header__bottom container">
-    <nav class="header__navbar navbar navbar-expand-lg navbar-light bs-white justify-content-between">
-        <div class="header__navbar container d-flex justify-content-between">
-            <div class="container-fuid d-flex flex-row">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">
-            </button>
-            <a href="#" class="navbar-brand">Main</a>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between ">
-                <li class="nav-item">
-                    <a class="item" aria-current="page" href="#">Chính trị</a>
-                    <ul class="submenu">
-                        <li class="title"> <a href="#" >Chính trị</a></li>
-                        <li><a href="#">a</a></li>
-                        <li><a href="#">a</a></li>
-                        <li><a href="#">a</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item ">
-                    <a class="item" href="#">Link</a>
-                    <ul class="submenu">
-                        <li class="title"> <a href="#" >Chính trị</a></li>
-                        <li><a href="#">a</a></li>
-                        <li><a href="#">a</a></li>
-                        <li><a href="#">a</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                    </a>
-                </li>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </ul>      
-        </div>        
+        nav {
+            background: #333;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 2px;
+            transition: 0.3s;
+        }
+
+        @media screen and (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background: #333;
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            /* Animation cho hamburger menu */
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Logo</div>
+        <ul class="nav-links">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </nav>
-</div>
-<style>
-    header nav ul li a.item {
-  text-decoration: none;
-  color:#42424a;
-  padding: 22px 0;
-  display: inline-block;
-  transition: all ease 0.3s;
-  font-size: 18px;
-}
-header nav ul li.nav-item{
-  margin: 0px 10px;
-}
-header nav ul li.nav-item a.item:hover{
-  color:#007aff;
-}
-header nav ul.submenu{
-  position: absolute;
-  width: 200px;
-  background-color: #ffff;
-  box-shadow: 0 20px 45px #b4b4b6;
-  margin-top:-20px ;
-  opacity:0 ;
-  z-index:-999;
-  transition: all ease 0.1s;
-}
-header nav ul li:hover .submenu {
-  opacity: 1;
-  z-index: 99;
-  margin-top: 2px;
-}
-header nav ul li ul.submenu {
-  margin: 0px;
-  list-style: none;
-  text-decoration: none;
-}
-header nav ul li ul.submenu a{
-  text-decoration: none;
-  color:#42424a;
-  display: inline-block;
-  transition: all ease 0.3s;
-  font-size: 18px;
-}
 
-header nav.navbar div.container{
-  border-bottom: 1px solid #007aff;
-}
-header nav div form.d-flex{
-  margin: 15px;
-}
-header div.container nav.navbar {
-  margin: auto;
-}
-header {
-  position: relative;
-  background-color:#fff;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-header div.header {
-  position: fixed;
-  background-color:#fff;
-  top: 0;
-  left: 0;
-  right: 0;
-}
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
 
-/* body */
-body div.app div.main{
-  position: absolute ;
-}
-/*foot*/
-footer{
-}
-</style>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

@@ -8,9 +8,9 @@ const __dirname = dirname(__filename);
 const app = express()
 
 
-app.engine('hbs', engine({extname:'.hbs'}));
+app.engine('hbs', engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname,'/views'));
+app.set('views', path.join(__dirname, '/views'));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
@@ -18,4 +18,4 @@ app.get('/', (req, res) => {
 });
 app.listen(3300, function () {
     console.log('Server started on http://localhost:3300');
-  });
+});

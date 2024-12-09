@@ -13,6 +13,23 @@ html{
     box-sizing: border-box;
 
 }
+
+li{
+    list-style: none;
+  }
+::-webkit-scrollbar{
+    width: 0.8rem;
+}
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+body::-webkit-scrollbar-track{
+    background:#bbb;
+}
+body::-webkit-scrollbar-thumb{
+    background: #333;
+}   
 .grid{
     width: 1200px;
     max-width: 1200px;
