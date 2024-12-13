@@ -1,4 +1,4 @@
-const Article = require('../models/article'); // Giả sử bạn có mô hình Article
+const Article = require('../models/article'); // mô hình Article
 
 // Lấy danh sách bài viết chờ duyệt
 const getPendingArticles = async () => {
