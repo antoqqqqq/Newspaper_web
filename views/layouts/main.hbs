@@ -1,21 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/main.css">
     <script src="https://kit.fontawesome.com/40eacb2013.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div class="app">
-        <header class="header">{{> header}} </header>
-        <div class="container main"> <div class="grid">   {{{body}}}</div></div>
+        <header class="header">
+            <div class="header__top">
+                <div class="header__top-item d-block d-sm-flex">
+                    <ul class="header__list-left">
+                        <li class="header__left-item">
+                            <img src="image/icon/header_icon1.png" alt="">34ºc, Sunny
+                        </li>
+                        <li class="header__left-item">
+                            <img src="image/icon/header_icon2.png" alt="">Tuesday, 18th June, 2019
+                        </li>
+                    </ul>
+                    <ul class="header__list-right">
+                        <li
+                            class="header__right-item header__right-item--strong header__right-item header__right-item--separate">
+                            <a href="/login" class="header_login">Đăng Nhập</a>
+                        </li>
+                        <li class="header__right-item header__right-item--strong">
+                            Đăng ký
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header__middle">
+                <div class="header_middleleft">
+                    <div class="header-info-left">
+                        <ul class="header-social  d-block d-md-flex flex-md-row align-items-center">
+                            <li><a href="https://x.com/?lang=vi"><i class="fab fa-twitter fa-2x"></i></a></li>
+                            <li><a href="https://www.facebook.com/"><i class="fab fa-instagram fa-2x"></i></a></li>
+                            <li><a href="https://pinterest.com/"><i class="fab fa-pinterest-p fa-2x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header__logo">
+                    <a href="/" title="Báo thanh niên" class="header__logo logo-fix">
+                        <img class="logo-thuong" alt="Báo thanh niên"
+                            src="https://static.thanhnien.com.vn/thanhnien.vn/image/logo.svg" width="220px"
+                            height="63px">
+                    </a>
+                </div>
+                <div class="header_middleright d-flex ">
+                    <form class="header_middle-search d-flex" role="search">
+                        <input class="header-search-text form-control me-2" type="search" placeholder="Search"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="header__bottom">
+                    <nav class="header__nav">
+                        <ul class="header__nav--list">
+                            {{#each categories}}
+                            <li class="header__nav--items">
+                                <a href="#" class="header_Home" id="headder_category{{categoryIndex}}">
+                                    <h3 class="header_category">{{name}}</h3>
+                                </a>
+                                <div class="header_submenu ">
+                                    <div class="header_submenu-item">
+                                        <a href="#" class="header_submenu-category">{{name}}</a>
+                                        <ul class="header_submenu-categoryitems">
+                                            {{#each categoryItems}}
+                                            <li class="header_submenu-categoryitem">
+                                                <a href="#"
+                                                    id="header_category-item_{{../categoryIndex}}-{{add @index 1}}">{{this}}</a>
+                                            </li>
+                                            {{/each}}
+                                        </ul>
+                                    </div>
+                                    <div class="header_categorytrend">
+                                        {{#each trendItems}}
+                                        {{> card_news_home
+                                        trendIndex=@index
+                                        categoryIndex=../categoryIndex
+                                        }}
+                                        {{/each}}
+                                    </div>
+
+                                </div>
+                            </li>
+                            {{/each }}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="container main">
+            <div class="grid"> {{{body}}}</div>
+        </div>
         <footer class="footer">{{> footer}}</footer>
     </div>
 </body>
+
 </html>

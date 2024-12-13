@@ -4,9 +4,15 @@
     "author": "Your Name <email@example.com> (https://example.com)",
     "main": "Src/main.js",
     "scripts": {
-        "start": "nodemon --inspect src/index.js",
-        "test": "echo \"Error:no test \"&& exit 1 "
-    },
+        "start": "node main.js",  
+        "dev": "nodemon main.js"           
+      },
+    "nodemonConfig": {
+        "watch": ["main.js", "routes/", "helpers/", "services/","data/"],
+        "ext": "js,json,hbs",
+        "ignore": ["public/"],
+        "exec": "node main.js"
+      },
     "type": "module",
     "dependencies": {
         "express": "^4.21.1",
