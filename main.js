@@ -7,12 +7,20 @@ import Handlebars from 'handlebars';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express()
-import data from "./data/data.js"; 
+import data from "./data/data.js";
 
 app.engine('hbs', engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '/views'));
 app.use(express.static('public'));
+app.use('/static', express.static('static'));
+// middleware
+app.use(async function (req, res, next) {
+    next();
+});
+Handlebars.registerHelper('eq', function (a, b) {
+    return a === b;
+});
 Handlebars.registerHelper('add', function (value, addition) {
     return parseInt(value) + addition;
 });

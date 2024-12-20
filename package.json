@@ -4,15 +4,23 @@
     "author": "Your Name <email@example.com> (https://example.com)",
     "main": "Src/main.js",
     "scripts": {
-        "start": "node main.js",  
-        "dev": "nodemon main.js"           
-      },
+        "start": "node main.js",
+        "dev": "nodemon main.js"
+    },
     "nodemonConfig": {
-        "watch": ["main.js", "routes/", "helpers/", "services/","data/"],
+        "watch": [
+            "main.js",
+            "routes/",
+            "helpers/",
+            "services/",
+            "data/"
+        ],
         "ext": "js,json,hbs",
-        "ignore": ["public/"],
+        "ignore": [
+            "public/"
+        ],
         "exec": "node main.js"
-      },
+    },
     "type": "module",
     "dependencies": {
         "express": "^4.21.1",
@@ -20,6 +28,7 @@
         "handlebars": "^4.7.8",
         "knex": "^3.1.0",
         "mysql2": "^3.11.3",
-        "nodemon": "^3.1.7"
+        "nodemon": "^3.1.7",
+        "slick-carousel": "^1.8.1"
     }
 }

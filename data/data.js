@@ -93,11 +93,96 @@ export default {
     {
       categoryIndex: 11,
       name: "Xe",
-      categoryItems: ["Thị trường","Đánh giá xe","Tư vấn","Video", "Showbiz", "Sự kiện"],
+      categoryItems: ["Thị trường", "Đánh giá xe", "Tư vấn", "Video", "Showbiz", "Sự kiện"],
       trendItems: [
         { imageUrl: "image/newsimg/news19.jpg", caption: "Tin nổi bật 19" },
         { imageUrl: "image/newsimg/news20.jpg", caption: "Tin nổi bật 20" },
       ],
     },
   ],
+  "trending-top":[
+    {
+      "imageUrl": "image/newsimg/sanbaylongthanh.jpg",
+  "category_number": 3,
+  "category": "Travel",
+  "dateRelease": "2024-12-15",
+  "caption": "Sân bay Long Thành bắt đầu hoạt động năm 2025."
+    },
+    {
+      "imageUrl": "image/newsimg/sanbaylongthanh.jpg",
+  "category_number": 3,
+  "category": "Travel",
+  "dateRelease": "2024-12-15",
+  "caption": "Sân bay Long Thành bắt đầu hoạt động năm 2025."
+    },
+    {
+      "imageUrl": "image/newsimg/sanbaylongthanh.jpg",
+  "category_number": 3,
+  "category": "Travel",
+  "dateRelease": "2024-12-15",
+  "caption": "Sân bay Long Thành bắt đầu hoạt động năm 2025."
+    },
+    {
+      "imageUrl": "image/newsimg/sanbaylongthanh.jpg",
+  "category_number": 3,
+  "category": "Travel",
+  "dateRelease": "2024-12-15",
+  "caption": "Sân bay Long Thành bắt đầu hoạt động năm 2025."
+    },
+  ],
+  "trending-bottom": [
+    {
+      "imageUrl": "image/newsimg/sanbaylongthanh.jpg",
+      "category_number": 1,
+      "category": "City",
+      "dateRelease": "2024-12-10",
+      "caption": "Đêm thành phố: Đèn lấp lánh trên bầu trời."
+    },
+    {
+      "imageUrl": "image/newsimg/sanbaylongthanh.jpg",
+      "category_number": 2,
+      "category": "Food",
+      "dateRelease": "2024-12-08",
+      "caption": "Lễ hội ẩm thực: Khám phá hương vị quê hương."
+    },
+    {
+      "imageUrl": "image/newsimg/sanbaylongthanh.jpg",
+      "category_number": 4,
+      "category": "Nature",
+      "dateRelease": "2024-12-05",
+      "caption": "Hoàng hôn trên biển: Một kỳ nghỉ trong mơ."
+    }
+  ],
+  "trand-right-single": [
+    {
+      "imageUrl": "image/newsimg/sanbaylongthanh.jpg",
+      "category_number": 2,
+      "category": "Adventure",
+      "dateRelease": "2024-12-07",
+      "caption": "Leo núi: Chinh phục đỉnh cao bất tận."
+    },
+    {
+      "imageUrl": "image/newsimg/sanbaylongthanh.jpg",
+      "category_number": 3,
+      "category": "Tech",
+      "dateRelease": "2024-12-11",
+      "caption": "Hội nghị công nghệ: Tương lai bắt đầu từ hôm nay."
+    },
+    {
+      "imageUrl": "image/newsimg/sanbaylongthanh.jpg",
+      "category_number": 1,
+      "category": "Culture",
+      "dateRelease": "2024-12-14",
+      "caption": "Sự kiện văn hóa: Gắn kết và chia sẻ giá trị truyền thống."
+    },
+    {
+      "imageUrl": "image/newsimg/sanbaylongthanh.jpg",
+      "category_number": 4,
+      "category": "Festival",
+      "dateRelease": "2024-12-12",
+      "caption": "Lễ hội mùa đông: Không khí lễ hội trên toàn thế giới."
+    }
+  ]
+
+
 };
