@@ -392,20 +392,11 @@ span {
 }
 
 /***** End trending-area *****/
-
+.autoplay{
+  position: relative;
+}
+.autoplay .slick-slide {
+  margin: 0 15px;  /* Thêm khoảng cách ngang giữa các slide */
+}
 
 /***** End main *****/
-.what-cap {
-  padding: 25px 20px 10px 0;
-  background: #fff;
-  position: absolute;
-  bottom: -63px;
-  left: 0;
-  width: 80%;
-  border-radius: 0 7px 0 0;
-  -webkit-transition: all .4s ease-out 0s;
-  -moz-transition: all .4s ease-out 0s;
-  -ms-transition: all .4s ease-out 0s;
-  -o-transition: all .4s ease-out 0s;
-  transition: all .4s ease-out 0s
-}

@@ -101,7 +101,7 @@
 <div class="category">
     <div class="row">
         <div class="recent-articles">
-            <div class="container">
+            <div>
                 <div class="recent-wrapper">
                     <!-- section Tittle -->
                     <div class="row">
@@ -113,31 +113,361 @@
                     </div>
                     <div class="row">
 
-                        <div class="col-12">
-                            <div data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
-  <div><h3>1</h3></div>
-  <div><h3>2</h3></div>
-  <div><h3>3</h3></div>
-  <div><h3>4</h3></div>
-  <div><h3>5</h3></div>
-  <div><h3>6</h3></div>
-</div>
-                            <button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous"
-                                role="button" style="display: block;">Previous</button>
-                            <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next"
-                                role="button" style="display: block;">Next</button>
+                        <div class="col-12 autoplay">
+
+                            <div>
+                                <div class="recent-wrapper_card mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="single-bottom mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="single-bottom mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="single-bottom mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="single-bottom mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <script>
-                            $('.autoplay').slick({
-                                slidesToShow: 3,
-                                slidesToScroll: 1,
-                                autoplay: true,
-                                autoplaySpeed: 2000,
+                            $(document).ready(function () {
+                                $('.autoplay').slick({
+                                    dots: true,
+                                    slidesToShow: 3,
+                                    slidesToScroll: 1,
+                                    autoplay: true,
+                                    autoplaySpeed: 2000,
+                                    prevArrow: '<button class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+                                    nextArrow: '<button class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+                                    responsive: [
+                                        {
+                                            breakpoint: 768, // Tablet
+                                            settings: {
+                                                slidesToShow: 2,
+                                            }
+                                        },
+                                        {
+                                            breakpoint: 480, // Mobile
+                                            settings: {
+                                                slidesToShow: 1,
+                                            }
+                                        }
+                                    ]
+                                });
                             });
+
                         </script>
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
+        <div class="recent-articles">
+            <div>
+                <div class="recent-wrapper">
+                    <!-- section Tittle -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-tittle mb-30">
+                                <h3>Bài viết xem nhiều nhất</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-12 autoplay">
+
+                            <div>
+                                <div class="recent-wrapper_card mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="single-bottom mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="single-bottom mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="single-bottom mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="single-bottom mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            $(document).ready(function () {
+                                $('.autoplay').slick({
+                                    dots: true,
+                                    slidesToShow: 3,
+                                    slidesToScroll: 1,
+                                    autoplay: true,
+                                    autoplaySpeed: 2000,
+                                    prevArrow: '<button class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+                                    nextArrow: '<button class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+                                    responsive: [
+                                        {
+                                            breakpoint: 768, // Tablet
+                                            settings: {
+                                                slidesToShow: 2,
+                                            }
+                                        },
+                                        {
+                                            breakpoint: 480, // Mobile
+                                            settings: {
+                                                slidesToShow: 1,
+                                            }
+                                        }
+                                    ]
+                                });
+                            });
+
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="recent-articles">
+            <div>
+                <div class="recent-wrapper">
+                    <!-- section Tittle -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-tittle mb-30">
+                                <h3>Bài viết nổi bật theo chuyên mục</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-12 autoplay">
+
+                            <div>
+                                <div class="recent-wrapper_card mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="single-bottom mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="single-bottom mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="single-bottom mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="single-bottom mb-35 w-30">
+                                    <div class="trend-bottom-img mb-30">
+                                        <img src="image/newsimg/sanbaylongthanh.jpg" alt="">
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        <div class="trand-bottom-information">
+                                            <span class="color4">Nature</span>
+                                            <span class="trand-right_time color4">2024-12-05</span>
+                                        </div>
+                                        <h4><a href="details.html">Hoàng hôn trên biển: Một kỳ nghỉ trong mơ.</a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            $(document).ready(function () {
+                                $('.autoplay').slick({
+                                    dots: true,
+                                    slidesToShow: 3,
+                                    slidesToScroll: 1,
+                                    autoplay: true,
+                                    autoplaySpeed: 2000,
+                                    prevArrow: '<button class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+                                    nextArrow: '<button class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+                                    responsive: [
+                                        {
+                                            breakpoint: 768, // Tablet
+                                            settings: {
+                                                slidesToShow: 2,
+                                            }
+                                        },
+                                        {
+                                            breakpoint: 480, // Mobile
+                                            settings: {
+                                                slidesToShow: 1,
+                                            }
+                                        }
+                                    ]
+                                });
+                            });
+
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -182,7 +182,7 @@ export default {
       "dateRelease": "2024-12-12",
       "caption": "Lễ hội mùa đông: Không khí lễ hội trên toàn thế giới."
     }
-  ]
+  ],
 
 
 };
