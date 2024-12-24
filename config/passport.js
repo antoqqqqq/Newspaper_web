@@ -1,41 +1,30 @@
-const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
-const pool = require('./db');
+const users = []; cần thay bằng database
 
-passport.use(new LocalStrategy(async (username, password, done) => {
-  try {
-    const [rows] = await pool.query('SELECT * FROM users WHERE username = ?', [username]);
-    if (rows.length === 0) {
-      return done(null, false, { message: 'Incorrect username or password.' });
-    }
+module.exports = (passport) => {
+    passport.use(
+        new LocalStrategy({ usernameField: 'email' }, async (email, password, done) => {
+            const user = users.find((user) => user.email === email);
+            if (!user) {
+                return done(null, false, { message: 'No user with that email' });
+            }
 
-    const user = rows[0];
-    const isValidPassword = await bcrypt.compare(password, user.password);
-    if (!isValidPassword) {
-      return done(null, false, { message: 'Incorrect username or password.' });
-    }
+            try {
+                if (await bcrypt.compare(password, user.password)) {
+                    return done(null, user);
+                } else {
+                    return done(null, false, { message: 'Password incorrect' });
+                }
+            } catch (err) {
+                return done(err);
+            }
+        })
+    );
 
-    return done(null, user);
-  } catch (err) {
-    return done(err);
-  }
-}));
-
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-passport.deserializeUser(async (id, done) => {
-  try {
-    const [rows] = await pool.query('SELECT * FROM users WHERE id = ?', [id]);
-    if (rows.length === 0) {
-      return done(new Error('User not found.'));
-    }
-    done(null, rows[0]);
-  } catch (err) {
-    done(err);
-  }
-});
-
-module.exports = passport;
+    passport.serializeUser((user, done) => done(null, user.id));
+    passport.deserializeUser((id, done) => {
+        const user = users.find((user) => user.id === id);
+        done(null, user);
+    });
+};
