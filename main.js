@@ -6,28 +6,29 @@ import { fileURLToPath } from 'url';
 import Handlebars from 'handlebars';
 import session from 'express-session';
 import passport from 'passport';
-import './config/passport.js'; // Cấu hình Passport
-import authRoutes from './routes/auth.js'; // Route xử lý đăng nhập/đăng ký qua Google/Facebook
+import flash from 'connect-flash'; // Add this for flash messages
+import './config/passport.js'; // Passport configuration
+import authRoutes from './routes/auth.route.js'; // Ensure correct import
 import data from './data/data.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
 
-// Cấu hình view engine
+// Configure view engine with Handlebars
 app.engine('hbs', engine({ extname: '.hbs' }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '/views'));
 
-// Static files
+// Static files middleware
 app.use(express.static('public'));
 app.use('/static', express.static('static'));
 
-// Middleware cho body parser
+// Middleware for body parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Cấu hình session và Passport.js
+// Configure session and Passport.js
 app.use(
     session({
         secret: 'your-secret-key',
@@ -38,18 +39,16 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Middleware custom
-app.use(async function (req, res, next) {
-    next();
-});
-
 // Flash messages middleware (optional)
+app.use(flash()); // Flash messages setup
 app.use((req, res, next) => {
-    res.locals.user = req.user || null; // Lưu thông tin người dùng đã đăng nhập
+    res.locals.user = req.user || null; // Store logged-in user info
+    res.locals.success_msg = req.flash('success_msg'); // For success messages
+    res.locals.error_msg = req.flash('error_msg'); // For error messages
     next();
 });
 
-// Đăng ký Handlebars helpers
+// Register Handlebars helpers
 Handlebars.registerHelper('eq', function (a, b) {
     return a === b;
 });
@@ -59,22 +58,22 @@ Handlebars.registerHelper('add', function (value, addition) {
 
 // Routes
 app.get('/', (req, res) => {
-    res.render('home', data); // Trang chủ
+    res.render('home', data); // Homepage
 });
 app.get('/login', (req, res) => {
-    res.render('Login', { layout: 'auth' }); // Trang đăng nhập
+    res.render('Login', { layout: 'auth' }); // Login page
 });
 app.get('/forgotpassword', (req, res) => {
-    res.render('forgotpassword', { layout: 'auth' }); // Trang quên mật khẩu
+    res.render('forgotpassword', { layout: 'auth' }); // Forgot password page
 });
 app.get('/register', (req, res) => {
-    res.render('register', { layout: 'auth' }); // Trang đăng ký
+    res.render('register', { layout: 'auth' }); // Register page
 });
 
-// Tích hợp route đăng nhập Google/Facebook
-app.use(authRoutes);
+// Include Google/Facebook login routes
+app.use(authRoutes); // Ensure the import is correct (it should export the correct routes)
 
-// Chạy server
+// Start the server
 const PORT = process.env.PORT || 3300;
 app.listen(PORT, function () {
     console.log(`Server started on http://localhost:${PORT}`);
