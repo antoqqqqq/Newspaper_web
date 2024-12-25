@@ -6,9 +6,8 @@ import { fileURLToPath } from 'url';
 import Handlebars from 'handlebars';
 import session from 'express-session';
 import passport from 'passport';
-import flash from 'connect-flash'; // Add this for flash messages
-import './config/passport.js'; // Passport configuration
-import authRoutes from './routes/auth.route.js'; // Ensure correct import
+import flash from 'connect-flash'; 
+import authRoutes from './routes/auth.route.js';
 import data from './data/data.js';
 
 const __filename = fileURLToPath(import.meta.url);
